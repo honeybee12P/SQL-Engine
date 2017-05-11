@@ -1,0 +1,88 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red242\green242\blue242;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c95825;\csgray\c0\c85000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \CocoaLigature0 Kruthika:SOLUTION kruthikavishwanath$ ./davisql.py \
+\
+* Starting prompt... Welcome to the DavisBASE monitor. \
+\
+davisql>use catalog;\
+Using Database/Schema [CATALOG]\
+davisql>select * from davisbase_columns;\
+\
++---------+---------------+-------------------+------------------+-------------+--------------------+---------------+--------------+\
+|   ROWID | SCHEMA_NAME   | TABLE_NAME        | COLUMN_NAME      | DATA_TYPE   |   ORDINAL_POSITION | IS_NULLABLE   | CONSTRAINT   |\
+|---------+---------------+-------------------+------------------+-------------+--------------------+---------------+--------------|\
+|      17 | CATALOG       | DAVISBASE_COLUMNS | ROWID            | INT         |                  1 | N             | PK           |\
+|      18 | CATALOG       | DAVISBASE_COLUMNS | SCHEMA_NAME      | TEXT        |                  2 | N             |              |\
+|      19 | CATALOG       | DAVISBASE_COLUMNS | TABLE_NAME       | TEXT        |                  3 | N             |              |\
+|      20 | CATALOG       | DAVISBASE_COLUMNS | COLUMN_NAME      | TEXT        |                  4 | N             |              |\
+|      21 | CATALOG       | DAVISBASE_COLUMNS | DATA_TYPE        | TEXT        |                  5 | N             |              |\
+|      22 | CATALOG       | DAVISBASE_COLUMNS | ORDINAL_POSITION | TINYINT     |                  6 | N             |              |\
+|      23 | CATALOG       | DAVISBASE_COLUMNS | IS_NULLABLE      | TEXT        |                  7 | N             |              |\
+|      24 | CATALOG       | DAVISBASE_COLUMNS | CONSTRAINT       | TEXT        |                  8 | Y             |              |\
+|      25 | CATALOG       | DAVISBASE_TABLES  | ROWID            | INT         |                  1 | N             | PK           |\
+|      26 | CATALOG       | DAVISBASE_TABLES  | SCHEMA_NAME      | TEXT        |                  2 | N             |              |\
+|      27 | CATALOG       | DAVISBASE_TABLES  | TABLE_NAME       | TEXT        |                  3 | N             |              |\
+|      28 | DB1           | T1                | ROWID            | INT         |                  1 | N             | PK           |\
+|      29 | DB1           | T1                | NAME             | TEXT        |                  2 | N             | PK           |\
+|      30 | DB1           | T1                | ID               | INT         |                  3 | Y             |              |\
++---------+---------------+-------------------+------------------+-------------+--------------------+---------------+--------------+\
+\
+davisql>CREATE DATABASE DB2;\
+Database [DB2] Created\
+davisql>SHOW DATABASES;\
+\
++-------------+\
+| DATABASES   |\
+|-------------|\
+| .DS_Store   |\
+| catalog     |\
+| DB1         |\
+| DB2         |\
++-------------+\
+\
+davisql>USE DB2;\
+Using Database/Schema [DB2]\
+davisql>CREATE TABLE TEST1 (NAME TEXT PRIMARY KEY, ID INT NOT NULL);\
+Table [TEST1] Created\
+davisql>INSERT INTO TEST1 VALUES (NISHANTH, 1);\
+davisql>INSERT INTO TEST1 VALUES (KRUTHIKA, 1);\
+davisql>INSERT INTO TEST1 VALUES (AISHWARYA, 2);\
+davisql>SELECT NAME FROM TEST1;\
+\
++-----------+\
+| NAME      |\
+|-----------|\
+| NISHANTH  |\
+| KRUTHIKA  |\
+| AISHWARYA |\
++-----------+\
+\
+davisql>CREATE TABLE TEST2 (NAME TEXT PRIMARY KEY, DT DATETIME, DATE DATE);\
+Table [TEST2] Created\
+davisql>INSERT INTO TEST2 VALUES (KRUTHIKA,2017010101,NULL);\
+davisql>INSERT INTO TEST2 VALUES (SRINIVASAN,NULL,201401010);\
+davisql>select * from TEST2;\
+\
++---------+------------+---------------------+------------+\
+|   ROWID | NAME       | DT                  | DATE       |\
+|---------+------------+---------------------+------------|\
+|       1 | KRUTHIKA   | 2017-01-01_01:11:11 | null       |\
+|       2 | SRINIVASAN | null                | 2014-01-01 |\
++---------+------------+---------------------+------------+\
+\
+davisql>select * from TEST2 where DT != null;\
+\
++---------+----------+---------------------+--------+\
+|   ROWID | NAME     | DT                  | DATE   |\
+|---------+----------+---------------------+--------|\
+|       1 | KRUTHIKA | 2017-01-01_01:11:11 | null   |\
++---------+----------+---------------------+--------+\
+\
+davisql>QUIT\
+Kruthika:SOLUTION kruthikavishwanath$ \
+}

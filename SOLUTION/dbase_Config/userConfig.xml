@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<PROPERTY>
+	
+	<INSTALL_PATH>/Users/kruthikavishwanath/Documents/Spring_2017/Database_Design/DavisBASE/SOLUTION</INSTALL_PATH>
+	<DESCRIPTION>
+		This is a mandatory tag wherein the install path of the application is to be given.
+		If this TAG value points to an invalid or non-existent directory, then the whole
+		program cannot run and ABORTS
+	</DESCRIPTION>
+	
+	<DEBUG>1</DEBUG>
+	<DESCRIPTION>
+		Set this Flag to 1 to Enable Debugging into ${solution.folder}/LOGS/, 0 to disable.
+	</DESCRIPTION>
+	
+	<PROMPT>davisql</PROMPT>
+	<DESCRIPTION>
+		Prompt to set to. If TAG is absent, the value defaults to 'davisql>'.
+	</DESCRIPTION>
+	
+	<PAGE_SIZE>512</PAGE_SIZE>
+	<DESCRIPTION>
+		Binary Tree Page Size in Byte to set to. If TAG is absent, the value defaults to 512 Byte. Valid Range is 512 Byte to 65536 Byte.
+		Invalid value also defaults to 512 Byte.
+	</DESCRIPTION>
+	
+	<BRANCHING_FACTOR>4</BRANCHING_FACTOR>
+	<DESCRIPTION>
+		Binary Tree Order (Branching Factor). If TAG is absent, the value defaults to 6. Valid Range is 2 to 50.
+		Invalid value also defaults to 6.
+	</DESCRIPTION>
+
+</PROPERTY>
